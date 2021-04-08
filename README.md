@@ -1,5 +1,8 @@
+
 # ARSCNView-Example
 Working and playing around with Apple's ARKIT Scene View, This repository elaborates how we can place a model in Augmented Reality nicely & place/move it to our favourite destination on floor.
+
+![IMG_0304](https://user-images.githubusercontent.com/51132953/113999138-3141f800-9873-11eb-93b5-cf526a5f3daf.PNG)
 
 # Placing 3D objects in ARKit
 What this sample demonstrates
