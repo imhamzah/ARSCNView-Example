@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,7 +18,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nno-Wv-Zul">
                                 <rect key="frame" x="30" y="752" width="354" height="60"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="KvJ-Bi-ECl"/>
                                 </constraints>
@@ -30,17 +29,34 @@
                                     <action selector="ActButtonAR:" destination="FJh-2I-ZwX" eventType="touchUpInside" id="vcB-C8-3w0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgQ-xI-GK0">
+                                <rect key="frame" x="30" y="672" width="354" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Vzp-FV-Qai"/>
+                                </constraints>
+                                <state key="normal" title="View in 3D">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="ActButton3D:" destination="FJh-2I-ZwX" eventType="touchUpInside" id="Kzk-vA-ueW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Ya-SH-rH6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="nno-Wv-Zul" firstAttribute="leading" secondItem="5Ya-SH-rH6" secondAttribute="leading" constant="30" id="I5y-hf-DTe"/>
                             <constraint firstItem="5Ya-SH-rH6" firstAttribute="trailing" secondItem="nno-Wv-Zul" secondAttribute="trailing" constant="30" id="MgB-QS-VZ3"/>
+                            <constraint firstItem="5Ya-SH-rH6" firstAttribute="trailing" secondItem="fgQ-xI-GK0" secondAttribute="trailing" constant="30" id="PQz-Vf-aYa"/>
+                            <constraint firstItem="nno-Wv-Zul" firstAttribute="top" secondItem="fgQ-xI-GK0" secondAttribute="bottom" constant="20" id="YTp-XG-krx"/>
+                            <constraint firstItem="fgQ-xI-GK0" firstAttribute="leading" secondItem="5Ya-SH-rH6" secondAttribute="leading" constant="30" id="bq6-ui-c7g"/>
                             <constraint firstItem="5Ya-SH-rH6" firstAttribute="bottom" secondItem="nno-Wv-Zul" secondAttribute="bottom" constant="50" id="zWD-j6-5gm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ruw-xv-1E2"/>
                     <connections>
+                        <outlet property="btn3D" destination="fgQ-xI-GK0" id="NWg-UB-29b"/>
                         <outlet property="btnAR" destination="nno-Wv-Zul" id="jzE-CA-zVh"/>
                     </connections>
                 </viewController>
@@ -59,51 +75,52 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </arscnView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w79-zK-ORg">
-                                <rect key="frame" x="167" y="752" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="H7V-i3-d8A"/>
-                                    <constraint firstAttribute="width" constant="80" id="gL2-PG-8uo"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <imageReference key="image" image="plusIcon" symbolScale="large"/>
-                                </state>
-                                <connections>
-                                    <action selector="ActAddNode:" destination="BV1-FR-VrT" eventType="touchUpInside" id="YBt-IV-Wx0"/>
-                                </connections>
-                            </button>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hPk-AK-0Kx">
-                                <rect key="frame" x="0.0" y="44" width="0.0" height="0.0"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" id="Cao-Zc-5do"/>
-                                    <constraint firstAttribute="width" id="Cmr-bG-bTB"/>
-                                </constraints>
-                            </sceneKitView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
                             <constraint firstAttribute="bottom" secondItem="BrB-h1-WRS" secondAttribute="bottom" id="Quk-0o-VaQ"/>
-                            <constraint firstItem="w79-zK-ORg" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="XgC-t4-Mxg"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="XyZ-9z-H8e"/>
-                            <constraint firstItem="hPk-AK-0Kx" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="f9U-W5-I33"/>
-                            <constraint firstItem="hPk-AK-0Kx" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" id="o1b-VM-c8E"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="rJc-2c-zQA"/>
-                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="w79-zK-ORg" secondAttribute="bottom" constant="30" id="xEM-dz-rNB"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnAdd" destination="w79-zK-ORg" id="cZW-d4-w5s"/>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
-                        <outlet property="sceneViewer" destination="hPk-AK-0Kx" id="tz1-h4-NIW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="118.52678571428571"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9Ue-h0-cr4">
+            <objects>
+                <viewController storyboardIdentifier="_3DViewController" id="cvr-Cb-Epq" customClass="_3DViewController" customModule="ARSCNView_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Eun-xu-CyW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PgH-BN-ho8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </sceneKitView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Z3g-we-D09"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PgH-BN-ho8" firstAttribute="leading" secondItem="Z3g-we-D09" secondAttribute="leading" id="CxV-4h-Vdo"/>
+                            <constraint firstAttribute="bottom" secondItem="PgH-BN-ho8" secondAttribute="bottom" id="JYF-br-VhP"/>
+                            <constraint firstItem="PgH-BN-ho8" firstAttribute="trailing" secondItem="Z3g-we-D09" secondAttribute="trailing" id="sSG-V1-9BI"/>
+                            <constraint firstItem="PgH-BN-ho8" firstAttribute="top" secondItem="Eun-xu-CyW" secondAttribute="top" id="xpN-Om-PDe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="PgH-BN-ho8" id="XwL-ZH-lOh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="agO-cn-SKt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1877" y="119"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="26H-3w-JD1">
@@ -125,9 +142,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="plusIcon" width="219" height="219"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

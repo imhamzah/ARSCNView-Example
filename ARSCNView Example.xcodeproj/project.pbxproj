@@ -17,6 +17,7 @@
 		524A50F6261EECC700BFC865 /* ARSCNView_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A50F5261EECC700BFC865 /* ARSCNView_ExampleUITests.swift */; };
 		52809F62261EF93B00E4A6B3 /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52809F61261EF93B00E4A6B3 /* ViewController+Extensions.swift */; };
 		52809F6F261EFA3200E4A6B3 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52809F6E261EFA3200E4A6B3 /* InitialViewController.swift */; };
+		52809FE226245D4100E4A6B3 /* _3DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52809FE126245D4100E4A6B3 /* _3DViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		524A50F7261EECC700BFC865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52809F61261EF93B00E4A6B3 /* ViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = "<group>"; };
 		52809F6E261EFA3200E4A6B3 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		52809FE126245D4100E4A6B3 /* _3DViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _3DViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				52809F6E261EFA3200E4A6B3 /* InitialViewController.swift */,
 				524A50D7261EECC700BFC865 /* ViewController.swift */,
 				52809F61261EF93B00E4A6B3 /* ViewController+Extensions.swift */,
+				52809FE126245D4100E4A6B3 /* _3DViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52809FE226245D4100E4A6B3 /* _3DViewController.swift in Sources */,
 				524A50D8261EECC700BFC865 /* ViewController.swift in Sources */,
 				52809F62261EF93B00E4A6B3 /* ViewController+Extensions.swift in Sources */,
 				524A50D4261EECC700BFC865 /* AppDelegate.swift in Sources */,

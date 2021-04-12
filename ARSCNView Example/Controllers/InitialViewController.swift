@@ -15,6 +15,12 @@ class InitialViewController: UIViewController {
             btnAR.clipsToBounds = true
         }
     }
+    @IBOutlet weak var btn3D: UIButton!{
+        didSet{
+            btn3D.layer.cornerRadius = 12
+            btn3D.clipsToBounds = true
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "View in AR"
@@ -28,6 +34,11 @@ class InitialViewController: UIViewController {
         }
     }
     
+    @IBAction func ActButton3D(_ sender: Any) {
+        if let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "_3DViewController") as? _3DViewController{
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
     /*
     // MARK: - Navigation
 
